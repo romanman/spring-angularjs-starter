@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+*.iml
+.gradle
+.idea
+
+*.log
+
+### NodeJS template
+node_modules/
+src/main/resources/static/bower_components
+
+build/
+dist/
+
+
+### Java template
+*.class
+
+
