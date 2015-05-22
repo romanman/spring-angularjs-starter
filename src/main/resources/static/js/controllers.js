@@ -1,14 +1,22 @@
 'use strict';
 
-var phonecatApp = angular.module('phonecatApp', []);
+/* Controllers */
 
-phonecatApp.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
+var phonecatControllers = angular.module('phonecatControllers', []);
 
-    $http.get('/phones').success(function(data) {
-        $scope.phones = data;
+phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
+  function($scope, Phone) {
+    $scope.phones = Phone.query();
+    $scope.orderProp = 'age';
+  }]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
+  function($scope, $routeParams, Phone) {
+    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
+      $scope.mainImageUrl = phone.images[0];
     });
 
-    $scope.orderProp = 'age';
-
-    $scope.name = "World";
-}]);
+    $scope.setImage = function(imageUrl) {
+      $scope.mainImageUrl = imageUrl;
+    }
+  }]);
