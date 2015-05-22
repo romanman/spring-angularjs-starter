@@ -2,16 +2,13 @@
 spring-angularjs-starter
 --------------
 
-1. What is that
-
 Starter for any combination of java spring webserver
 and a angularjs interface.
 
+
+#####How to start
 ```
-2. How to start
-
-To start you need nodejs if not do: apt-get install npm
-
+# To start you need nodejs if not do: apt-get install npm
 
 # to get npm modules
 npm install
@@ -20,16 +17,14 @@ npm install
 bower install
 ```
 
+#####How to run
 ```
-3. How to run
-
 # run spring boot
 gradle bootRun
 ```
 
+#####How to test
 ```
-4. How to test
-
 #unit test
 npm test
 
